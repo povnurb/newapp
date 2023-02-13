@@ -1,6 +1,6 @@
 <template>
   <div class="app-layout">
-    <navbar />
+    <navbar /><!--aqui esta el navbar-->
     <div class="app-layout__content">
       <div class="app-layout__sidebar-wrapper" :class="{ minimized: isSidebarMinimized }">
         <div v-if="isFullScreenSidebar" class="d-flex justify-end">
@@ -14,9 +14,7 @@
         />
       </div>
       <div class="app-layout__page">
-        <div class="layout fluid va-gutter-5">
-          <router-view />
-        </div>
+        <div class="layout fluid va-gutter-5"><router-view /><!--aqui se ve el router--></div>
       </div>
     </div>
   </div>

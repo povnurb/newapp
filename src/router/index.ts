@@ -28,6 +28,21 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/admin/dashboard/Dashboard.vue'),
       },
       {
+        name: 'devices',
+        path: 'devices',
+        component: () => import('../pages/admin/devices/Devices.vue'),
+      },
+      {
+        name: 'alarms',
+        path: 'alarms',
+        component: () => import('../pages/admin/alarms/Alarms.vue'),
+      },
+      {
+        name: 'templates',
+        path: 'templates',
+        component: () => import('../pages/admin/templates/Templates.vue'),
+      },
+      {
         name: 'statistics',
         path: 'statistics',
         component: RouteViewComponent,

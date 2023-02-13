@@ -26,6 +26,27 @@ export default {
       },
     },
     {
+      name: 'devices',
+      displayName: 'menu.devices',
+      meta: {
+        icon: 'developer_board',
+      },
+    },
+    {
+      name: 'alarms',
+      displayName: 'menu.alarms',
+      meta: {
+        icon: 'glyphicon-alert',
+      },
+    },
+    {
+      name: 'templates',
+      displayName: 'menu.templates',
+      meta: {
+        icon: 'vuestic-iconset-tables',
+      },
+    },
+    {
       name: 'statistics',
       displayName: 'menu.statistics',
       meta: {

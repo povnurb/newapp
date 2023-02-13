@@ -1,8 +1,8 @@
 <template>
   <div class="row row-equal">
-    <div class="flex xl6 xs12 lg6">
+    <div class="flex xs12">
       <div class="row">
-        <div v-for="(info, idx) in infoTiles" :key="idx" class="flex xs12 sm4">
+        <div v-for="(info, idx) in infoTiles" :key="idx" class="flex xs12 sm12">
           <va-card class="mb-4" :color="info.color">
             <va-card-content>
               <h2 class="va-h2 ma-0" style="color: white">{{ info.value }}</h2>
@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="flex xs12 sm6 md6 xl3 lg3">
+    <!--<div class="flex xs12 sm6 md6 xl3 lg3">
       <va-card stripe stripe-color="info">
         <va-card-title>
           {{ t('dashboard.info.componentRichTheme') }}
@@ -61,9 +61,9 @@
           </div>
         </va-card-content>
       </va-card>
-    </div>
+    </div>-->
 
-    <div class="flex xs12 sm6 md6 xl3 lg3">
+    <!--<div class="flex xs12 sm6 md6 xl3 lg3">
       <va-card>
         <va-image :src="images[currentImageIndex]" style="height: 200px" />
         <va-card-title>
@@ -75,7 +75,7 @@
     </div>
     <va-modal v-model="modal">
       <va-carousel v-model="currentImageIndex" :items="images" class="gallery-carousel" />
-    </va-modal>
+    </va-modal>-->
   </div>
 </template>
 

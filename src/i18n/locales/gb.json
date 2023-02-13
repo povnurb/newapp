@@ -286,11 +286,12 @@
   "language": {
     "brazilian_portuguese": "Português",
     "english": "English",
-    "spanish": "Spanish",
+    "spanish": "Español",
     "simplified_chinese": "Simplified Chinese",
     "persian": "Persian"
   },
   "menu": {
+    "alarms":"Alarms",
     "auth": "Auth",
     "rating": "Rating",
     "buttons": "Buttons",
@@ -299,6 +300,7 @@
     "collapses": "Collapses",
     "timelines": "Timelines",
     "dashboard": "Dashboard",
+    "devices": "Devices",
     "formElements": "Form Elements",
     "forms": "Forms",
     "mediumEditor": "Medium Editor",
@@ -316,6 +318,7 @@
     "statistics": "Statistics",
     "lists": "Lists",
     "tables": "Tables",
+    "templates": "Templates",
     "markupTables": "Markup Tables",
     "dataTables": "Data Tables",
     "chips": "Chips",

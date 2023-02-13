@@ -125,16 +125,18 @@
   "language": {
     "brazilian_portuguese": "Português",
     "english": "English",
-    "spanish": "Spanish",
+    "spanish": "Español",
     "simplified_chinese": "Versión abreviada"
   },
   "menu": {
+    "alarms": "Alarmas",
     "auth": "Autenticación",
     "buttons": "Botones",
     "charts": "Gráficos",
     "collapse": "Colapso",
     "colorPickers": "Selector de color",
     "dashboard": "Dashboard",
+    "devices": "Dispositivos",
     "formElements": "Elementos de un Formulario",
     "forms": "Formularios",
     "mediumEditor": "Medium Editor",
@@ -150,6 +152,7 @@
     "statistics": "Estadisticas",
     "lists": "Listas",
     "tables": "Tablas",
+    "templates": "Plantilla",
     "markupTables": "Tablas de Marcado",
     "dataTables": "Tablas de Datos",
     "typography": "Tipografía",

@@ -1,17 +1,8 @@
 <template>
   <va-content class="typography content">
-  
     <h1>
-      {{ t('menu.templates') }}
+      {{ t('menu.devices') }}
     </h1>
-  
-  </va-content>
-  <va-content class="typography content">
-    <va-card>
-      <h1>
-        {{ t('menu.templates') }}
-      </h1>
-    </va-card>
   </va-content>
   <div class="cards">
     <div class="cards-container row d-flex wrap align--start">
