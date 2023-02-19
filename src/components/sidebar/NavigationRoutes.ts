@@ -12,13 +12,6 @@ export default {
   },
   routes: [
     {
-      name: 'lalo',
-      displayName: 'sidebar/NavigationRoutes.tslalo',
-      meta: {
-        icon: 'vuestic-iconset-tables',
-      },
-    },
-    {
       name: 'dashboard',
       displayName: 'menu.dashboard',
       meta: {

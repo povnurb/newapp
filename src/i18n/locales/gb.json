@@ -62,11 +62,14 @@
     "small": "Small",
     "normal": "Normal",
     "success": "Success",
+    "select": "Select",
+    "template": "Template",
     "info": "Info",
     "danger": "Danger",
     "warning": "Warning",
     "gray": "Gray",
-    "dark": "Dark"
+    "dark": "Dark",
+    "save": "Save"
   },
   "charts": {
     "horizontalBarChart": "Horizontal Bar Chart",
@@ -242,6 +245,7 @@
       "customDateFormat": "Custom date format"
     },
     "inputs": {
+      "actions": "Actions",
       "emailValidatedSuccess": "Email (validated with success)",
       "emailValidated": "Email (validated)",
       "inputWithIcon": "Input With Icon",
@@ -251,8 +255,12 @@
       "textInput": "Text Input",
       "textInputWithDescription": "Text Input (with description)",
       "textArea": "Text Area",
+      "template": "Template",
       "title": "Inputs",
-      "upload": "UPLOAD"
+      "upload": "UPLOAD",
+      "add": "Add new Device",
+      "name": "Device Name",
+      "id": "Device Id"
     },
     "mediumEditor": {
       "title": "Medium Editor"
@@ -544,7 +552,9 @@
       "main": "Main",
       "cancel": "Cancel",
       "showMore": "Show More",
-      "readMore": "Show More"
+      "addMore": "Add More",
+      "readMore": "Show More",
+      "delete": "Delete"
     },
     "link": {
       "edit": "Edit",

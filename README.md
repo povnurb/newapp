@@ -16,7 +16,6 @@ Based on <a href="https://github.com/epicmaxco/vuestic-ui">Vuestic UI</a> librar
   <a href="https://vuestic.epicmax.co/admin/dashboard?theme=light"> Light theme demo </a> | <a href="https://vuestic.epicmax.co/admin/dashboard?theme=semi-dark">Semi-dark theme demo </a> | <a href="https://vuestic.epicmax.co/admin/dashboard?theme=original">Original theme demo </a> | <a href="https://vuestic.dev"> Vuestic UI documentation </a>
 </p>
 
-
 ### Documentation
 
 Documentation, guides and tutorials are available
@@ -77,6 +76,7 @@ $ yarn build
 # build for production and view the bundle analyzer report.
 $ yarn build --report
 ```
+
 ### License
 
 [MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.

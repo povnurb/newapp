@@ -84,8 +84,7 @@
             <div class="row">
               <div class="flex">
                 <va-button class="mr-2 mb-2" preset="outline" border-color="danger" color="danger">
-                  {{ t('buttons.danger') }}</va-button
-                >
+                  {{ t('buttons.danger') }}</va-button>
                 <va-button class="mr-2 mb-2" preset="outline" border-color="info" color="info">
                   {{ t('buttons.info') }}</va-button
                 >
@@ -265,8 +264,10 @@
                   {{ t('buttons.content') }}</va-button-dropdown
                 >
                 <va-button-dropdown class="mr-2 mb-2" color="warning" :label="t('buttons.warning')">
-                  {{ t('buttons.content') }}</va-button-dropdown
-                >
+                  <option>{{ t('buttons.content') }}</option>
+                  <option>{{ t('buttons.content') }}</option>
+                  <option>{{ t('buttons.content') }}</option>
+                </va-button-dropdown>
               </div>
             </div>
           </va-card-content>

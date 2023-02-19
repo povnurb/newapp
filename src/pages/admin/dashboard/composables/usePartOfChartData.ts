@@ -1,6 +1,7 @@
 import { computed, ref, ComputedRef } from '@vue/reactivity'
 import { TChartData } from '../../../../data/types'
 
+
 export function usePartOfChartData<T extends TChartData>(data: ComputedRef<T>) {
   const datasetIndex = ref(0)
 
@@ -23,5 +24,11 @@ export function usePartOfChartData<T extends TChartData>(data: ComputedRef<T>) {
     maxIndex: (data.value.labels?.length ?? 0) - 1,
     dataComputed,
     setDatasetIndex,
+  }
+}
+//gregado por lalo
+export default {
+  setup() {
+    
   }
 }

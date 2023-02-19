@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+//import sendData from '../pages/admin/templates/Templates.vue'
 
 import AuthLayout from '../layouts/AuthLayout.vue'
 import AppLayout from '../layouts/AppLayout.vue'
@@ -17,11 +18,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/admin',
     component: AppLayout,
     children: [
-      {
-        name: 'lalo',
-        path: 'lalo',
-        component: () => import('../pages/admin/lalo/Lalo.vue'),
-      },
       {
         name: 'dashboard',
         path: 'dashboard',
@@ -237,4 +233,4 @@ const router = createRouter({
   routes,
 })
 
-export default router
+export default router 
