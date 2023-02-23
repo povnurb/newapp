@@ -66,7 +66,7 @@
           </va-card-content>
         </va-card>
       </div>
-
+      
       <div class="flex xs12">
         <va-card class="larger-padding">
           <va-card-title>{{ t('buttons.colors') }}</va-card-title>
@@ -115,7 +115,7 @@
           </va-card-content>
         </va-card>
       </div>
-
+    
       <div class="flex xs12">
         <va-card class="larger-padding">
           <va-card-title>{{ t('buttons.buttonGroups') }}</va-card-title>
@@ -168,7 +168,7 @@
           </va-card-content>
         </va-card>
       </div>
-
+      
       <div class="flex xs12">
         <va-card class="larger-padding">
           <va-card-title>{{ t('buttons.buttonToggles') }}</va-card-title>
@@ -208,7 +208,7 @@
           </va-card-content>
         </va-card>
       </div>
-
+      
       <div class="flex xs12">
         <va-card class="larger-padding">
           <va-card-title>{{ t('buttons.pagination') }}</va-card-title>
@@ -264,9 +264,7 @@
                   {{ t('buttons.content') }}</va-button-dropdown
                 >
                 <va-button-dropdown class="mr-2 mb-2" color="warning" :label="t('buttons.warning')">
-                  <option>{{ t('buttons.content') }}</option>
-                  <option>{{ t('buttons.content') }}</option>
-                  <option>{{ t('buttons.content') }}</option>
+                  {{ t('buttons.content') }}
                 </va-button-dropdown>
               </div>
             </div>

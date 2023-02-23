@@ -44,7 +44,7 @@
     "split": "Split",
     "splitTo": "Split to",
     "customIcon": "Custom icon",
-    "buttonToggles": "Button Toggles",
+    "buttonToggles": "Cambiar",
     "pagination": "Pagination",
     "a-link": "Open EpicSpinners",
     "router-link": "Move to Charts",
@@ -71,7 +71,8 @@
     "small": "PEQUEÑO",
     "template": "Plantilla",
     "select": "Seleccionar",
-    "save":"Guardar"
+    "save":"Guardar",
+    "send": "Enviar"
   },
   "charts": {
     "bubbleChart": "Bubble Chart",

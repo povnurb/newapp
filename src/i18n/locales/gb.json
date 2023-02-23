@@ -69,7 +69,8 @@
     "warning": "Warning",
     "gray": "Gray",
     "dark": "Dark",
-    "save": "Save"
+    "save": "Save",
+    "send": "Send"
   },
   "charts": {
     "horizontalBarChart": "Horizontal Bar Chart",

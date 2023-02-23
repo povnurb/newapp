@@ -5,7 +5,7 @@
             
         </va-card-title>
         <div class="va-text-center">
-        <va-icon class=" fa " :class="[config.icon]" :style="{ color: getIconColorClass() }" size="40px"></va-icon>
+        <va-icon class="mr-3 mb-3 ml-4 fa-4x fa " :class="[config.icon]" :style="{ color: getIconColorClass() }" size="40px"></va-icon>
         </div>
     </va-card>
 </template>
@@ -14,27 +14,39 @@
 <script lang="ts">
 
 import useEmitter from '../../../../../plugin/useEmitter'
-
-import data from '../../components/Widgets/Iotindicator.vue'
-
+import { property } from 'lodash'
+import {ref} from 'vue'
+import data from './Iotindicator.vue'
+import { videoOverlay } from 'leaflet';
+import viteConfig from '../../../../../vite.config';
 export default {
     props: ['config'],
     data() {
         return {
             value:false,
-           
+            /*config: {
+                userId: 'userid',
+                selectedDevice: {
+                    name: "home",
+                    dId: "8888",
+                    templateName: "Power Sensor",
+                    templateId: "28934750238957",
+                    saverRule: true,
+                },
+                variableFullName: "bomba",
+                variable: 'var1',
+                icon: "fa-lightbulb",
+                column: 'xs6 md2', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
+                widget: 'indicator',
+                class: 'warning'
+            }*/
         }
     },
     mounted(){
         
-        const topic = this.config.userId + "/" + this.config.selectedDevice.dId + "/" + this.config.variable + "/sdata"
+        const topic = this.config.userId + "/" + this.config.selectedDevice.dId + "/" + this.config.variable + "/sdata" 
         console.log(topic);
         useEmitter.$on(topic, this.processReceivedData)
-    },
-    unmounted() {
-        const topic = this.config.userId + "/" + this.config.selectedDevice.dId + "/" + this.config.variable + "/sdata"
-        //console.log("desescribir")
-        useEmitter.$off(topic)
     },
     methods: {
         sendData() {
@@ -46,7 +58,8 @@ export default {
         },
             
         processReceivedData(data) {
-            //console.log("received")
+            //console.log("received");
+            //console.log(data);
             this.value = data.value
         },
 
@@ -87,6 +100,7 @@ export default {
                 useEmitter.$emit('userid/8888/var1/sdata', toSend)
             }
             return data.value
+            /*property.value = data.value;*/
             
         }
         
