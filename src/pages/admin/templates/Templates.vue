@@ -1,24 +1,173 @@
 <template>
     <va-content class="typography content">
-       
         <h1>
             {{ t('menu.templates') }}
         </h1>
-        <div class="row">
-        <Iotindicator :config="configindicator"></Iotindicator>
+     </va-content>
+    <div class="cards-container row d-flex wrap align--start">
+        <!--Widget configurator-->
+        <div class="flex xs12">
+          <va-card>
+            <va-card-title>
+              Widgets
+            </va-card-title>
         
+            <va-card-content>
+              <form>
+                <div class="row">
+                    <!--widget Selector and forms-->
+                    <div class="flex xs6">    
+                        <!--widget selector-->
+                        <va-select     
+                                v-model="widgetType"
+                                placeholder="Select Widget"
+                                :label="t('forms.selects.searchable')"
+                                searchable
+                                :options="simpleOptions"
+                          />                                               
+                        <br />         
+                        <!--Forms number char type-->
+                        <!--<div  v-if="simpleOptions[0].value == 'numberchart'">-->
+                        <form v-if=" widgetType == 'Number Chart Input'">
+                          <br /> 
+                          Graficas <!--poner una clase a los div los inputs para que se separen -->
+                          <br /> <br />                           
+                          <va-input label="Var Name" type="text" ></va-input>
+                          <br /> <br />                          
+                          <va-input  label="Unit" type="text"></va-input>
+                          <br /> <br />                          
+                          <va-input  label="Decimal Places" type="number"></va-input>
+                          <br /> <br /> 
+                          <va-input v-model="icon" label="Icon" type="text"/>
+                          <br /> <br /> 
+                          <va-input  label="chart Back Time (mins)" type="number"></va-input>
+                            <br /> <br /> 
+                          <va-select v-model="tema" label="Tema" type="text" 
+                          :options="['success','danger','warning','info','secondary',
+          '#36e9f6', '#ed34b8 (violeta)','#8f4ed6 (purpura)', '#d40d52 (ruby)','#ff842b (naranja)',
+          '#1b9a7c (dark green)','#d3ff00 (toxic)','#81513e (brow)']"/>
+                            <br /> <br /> 
+                        </form>
+                        <!--Forms toggle button type-->
+                        <div v-else-if="widgetType == 'Toggle Button Output'">
+                            togglebutton
+                          </div>
+                        <!--Forms button type-->
+                        <div v-else-if="widgetType == 'Button Output'">
+                            button
+                          </div>
+                        <!--Forms indicator type-->
+                          <div v-else-if="widgetType == 'Indicator Input'">
+                            indicator
+                          </div>
+                        <!--Forms switch small type-->
+                          <div v-else-if="widgetType == 'Small Switch Output'">
+                            smallswitch
+                          </div>
+                        <!--Forms switch type-->
+                        <div v-else-if="widgetType == 'Switch Output'">
+                            switch
+                          </div>
+                    </div>
+
+                    <!--widget Preview-->
+                    <div class="flex xs6">        
+                          <!--<va-select 
+                                placeholder="Select Widget"
+                                v-model="widgetType"
+                                :label="t('forms.selects.searchable')"
+                                searchable
+                                text-by="description"
+                                track-by="id"
+                                :options="simpleOptions"
+                            >
+                            <template #append>
+                          <va-button style="margin-right: 0" small> {{ t('cards.button.addWidget')}} </va-button>
+                        </template>
+                          </va-select>-->
+                        </div>
+                    
+
+                </div>
+                <!--add widget button-->
+                <div class="flex offset-xs10">
+                    <va-button> {{ t('cards.button.addWidget') }} </va-button>
+                </div>
+              </form>
+            </va-card-content>
+        
+          </va-card>
+
         </div>
+        <!--Dashboard preview-->
+        <!--Save Template-->
+        <div class="flex xs12">
+              <va-card>
+                <va-card-title>
+                  {{ t('cards.button.saveTemplate') }}
+                </va-card-title>
         
-    </va-content>
-    <va-content class="typography content">
-       
-            <div class="row" >
-            <Iotbutton :config="configButton"></Iotbutton>
-            <Iottogglebutton :config="configtoggle"></Iottogglebutton>
-            </div>
+                <va-card-content>
+                  <form>
+                    <div class="row">
+                        <div class="flex md4 sm6 xs12">
+                    <label>{{ t('forms.inputs.templateName') }}</label>:<va-input placeholder="Ex: Home, Hogar, Office" />
+                  </div>
+                      <div class="flex   xs8">
+                        <label>{{ t('forms.inputs.templateDescription') }}</label>:
+                          <va-input 
+                                placeholder="Select Widget"
+                                text-by="description"
+                                track-by="id"
+                            >
+                            <template #append>
+                              <va-button style="margin-right: 0" small> {{ t('cards.button.saveTemplate') }} </va-button>
+                            </template>
+                          </va-input>
+                        </div>
+                    </div>
+                  </form>
+                </va-card-content>
+        
+              </va-card>
+
+        </div>
+        <!--Template table-->
+        <div class="flex xs12">
+              <va-card>
+                <va-card-title>
+                  {{ t('forms.inputs.templates')}}
+                </va-card-title>
+                <!--
+                <va-card-content>
+                  <form>
+                    <div class="row">
+                      <div class="flex xs12">
+                          <va-select 
+                                placeholder="Select Widget"
+                                v-model="widgetType"
+                                :label="t('forms.selects.searchable')"
+                                searchable
+                                text-by="description"
+                                track-by="id"
+                                :options="simpleOptions"
+                            >
+                            <template #append>
+                              <va-button style="margin-right: 0" small> {{ t('cards.button.addWidget') }} </va-button>
+                            </template>
+                          </va-select>
+                        </div>
+                    </div>
+                  </form>
+                </va-card-content>
+              -->
+              </va-card>
+
+        </div>
+
+      </div>
            
-        </va-content>
-    
+       
 </template>
 <script setup lang="ts">
 import { extraColors } from '../../../pages/admin/ui/colors/color-presentation/colorsData'
@@ -34,72 +183,99 @@ const options = ref([
     { label: 'Encender', value: "true" },
     
 ])
+//http://vuestic.dev/en/ui-elements/select
+const simpleOptions = ref(['Number Chart Input','Indicator Input','Toggle Button Output','Small Switch Output','Switch Output','Button Output'])
 
-
+const widgetType = ref('')
+const tema = ref('success')
+const icon = ref('')
 const model = ref("false")
 
 </script>
 <script lang="ts">
 import useEmitter from '../../../../plugin/useEmitter'
+import { Id } from '@amcharts/amcharts5/.internal/core/render/backend/Renderer'
 export default {
-    data() {
-        return {
-            value: false,
-            configButton: {
-                userId: 'userid',
-                selectedDevice: {
-                    name: "home",
-                    dId: "8888",
-                    templateName: "Power Sensor",
-                    templateId: "28934750238957",
-                    saverRule: true,
-                },
-                variableFullName: "bomba",
-                variable: 'var1',
-                icon: "fa-lightbulb",
-                column: 'xs6 md2', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
-                widget: 'indicator',
-                class: "#ed34b8", //success,danger,warning,info,secondary,
-                //#36e9f6, #ed34b8(violeta),#8f4ed6(purpura), #d40d52(ruby),#ff842b(naranja),
-                //#1b9a7c(dark green),#d3ff00(toxic),#81513e(brow)
-                message: "{'fanstatus':'stop'}"
+  data() {
+    return {
+        widget: [],
+        templates: [],
+        widgetType: "",
+        templateName: "",
+        templateDescription:"",
+        ncConfig: {
+        userId: 'sampleuserid',
+        selectedDevice: {
+            name: "home",
+            dId: "8888",
+        },
+        variableFullName: "temperature",
+        variable: 'varname',
+        unit: "Watts",
+        class: "#ed34b8", //success,danger,warning,info,secondary,
+        //#36e9f6, #ed34b8(violeta),#8f4ed6(purpura), #d40d52(ruby),#ff842b(naranja),
+        //#1b9a7c(dark green),#d3ff00(toxic),#81513e(brow)
+        column: 'xs6 md2', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
+        decimalPlaces: 2,
+        widget: 'numberchart',
+        icon: "fa-lightbulb",
+        chartTimeAgo: '1566',
+        demo: true
+      },
+        configindicator: {
+            userId: "userid",
+            selectedDevice: {
+                name: "home",
+                dId: "8888",
+                templateName: "Power Sensor",
+                templateId: "28934750238957",
+                saverRule: true,
             },
-            configindicator: {
-                userId: "userid",
-                selectedDevice: {
-                    name: "home",
-                    dId: "8888",
-                    templateName: "Power Sensor",
-                    templateId: "28934750238957",
-                    saverRule: true,
-                },
-                variableFullName: "bomba",
-                variable: "var1",
-                icon: "fa-lightbulb",
-                column: "xs6 md2",
-                widget: "indicator",
-                class: "warning"
+            variableFullName: "bomba",
+            variable: "var1",
+            icon: "fa-lightbulb",
+            column: "xs6 md2",
+            widget: "indicator",
+            class: "warning"
+        },
+        configtoggle: {
+            userId: 'userid',
+            selectedDevice: {
+                name: "home",
+                dId: "8888",
+                templateName: "Power Sensor",
+                templateId: "28934750238957",
+                saverRule: true,
             },
-            configtoggle: {
-                userId: 'userid',
-                selectedDevice: {
-                    name: "home",
-                    dId: "8888",
-                    templateName: "Power Sensor",
-                    templateId: "28934750238957",
-                    saverRule: true,
-                },
-                variableFullName: "bomba",
-                variable: 'var1',
-                icon: "fa-lightbulb",
-                column: 'xs8 md3', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
-                widget: 'indicator',
-                class: 'warning'
-            }
+            variableFullName: "bomba",
+            variable: 'var1',
+            icon: "fa-lightbulb",
+            column: 'xs8 md3', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
+            widget: 'indicator',
+            class: 'warning'
+      },
+        iotSwitchConfig: {
+        userId: 'userid',
+        selectedDevice: {
+          name: "home",
+          dId: "8888",
+          templateName: "Power Sensor",
+          templateId: "28934750238957",
+          saverRule: true,
+        },
+        variableFullName: "bomba",
+        variable: 'var1',
+        icon: "fa-lightbulb",
+        column: 'xs8 md3', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
+        widget: 'indicator',
+        class: 'warning'
+      },
+      
         };
     },
-    methods: {},
-    components: { Iotbutton }
+  methods: {
+    },
+  components: { Iotbutton }
 }
 </script>
 <style lang="scss" scoped>

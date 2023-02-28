@@ -40,6 +40,13 @@ export default {
       },
     },
     {
+      name: 'icon-sets',
+      displayName: 'menu.icons',
+      meta: {
+      icon: 'vuestic-iconset-components',
+      },     
+    },
+    {
       name: 'statistics',
       displayName: 'menu.statistics',
       meta: {
@@ -139,12 +146,12 @@ export default {
         {
           name: 'icon-sets',
           displayName: 'menu.icons',
-          children: [
+          /*children: [
             {
               displayName: 'concrete',
               name: 'icon-set',
             },
-          ],
+          ],*/
         },
         {
           name: 'lists',

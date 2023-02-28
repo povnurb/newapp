@@ -7,6 +7,7 @@ import Page404Layout from '../layouts/Page404Layout.vue'
 
 import RouteViewComponent from '../layouts/RouterBypass.vue'
 import UIRoute from '../pages/admin/ui/route'
+import iconsConfig from '../services/vuestic-ui/icons-config/icons-config'
 
 const routes: Array<RouteRecordRaw> = [
   {

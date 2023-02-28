@@ -52,8 +52,10 @@
           style="flex-direction: column"
         >
           <div class="vuestic-icon mb-3 pt-3">
+            
             <va-icon :name="iconName(icon)" :size="iconSize" />
           </div>
+          <div class="icon-text">{{ iconSet.prefix }}-</div>
           <div class="icon-text">
             {{ icon }}
           </div>
@@ -78,11 +80,11 @@
   }>()
 
   const search = ref('')
-  const iconSize = ref(30)
+  const iconSize = ref(35)
   const slider = ref({
     formatter: (v: never) => `${v}px`,
     min: 20,
-    max: 40,
+    max: 50,
   })
 
   const iconSet = computed((): IconSet => {

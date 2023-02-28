@@ -257,6 +257,9 @@
       "textInputWithDescription": "Text Input (with description)",
       "textArea": "Text Area",
       "template": "Template",
+      "templates": "Templates",
+      "templateName": "Template Name",
+      "templateDescription": "Template Description",
       "title": "Inputs",
       "upload": "UPLOAD",
       "add": "Add new Device",
@@ -555,7 +558,9 @@
       "showMore": "Show More",
       "addMore": "Add More",
       "readMore": "Show More",
-      "delete": "Delete"
+      "delete": "Delete",
+      "addWidget": "Add Widget",
+      "saveTemplate": "Save Template"
     },
     "link": {
       "edit": "Edit",

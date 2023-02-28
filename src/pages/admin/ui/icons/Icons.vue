@@ -10,6 +10,7 @@
 
   const sets = computed<IconSet[]>(() => {
     const sets = import.meta.globEager('./sets/*.json', {})
+    
 
     return Object.values(sets)
       .reverse()

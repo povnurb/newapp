@@ -243,6 +243,9 @@
       "inputWithClearButton": "Input With Clear Button",
       "inputWithRoundButton": "Input With Round Button",
       "template": "Plantilla",
+      "templates": "Plantillas",
+      "templateName": "Nombre de la plantilla",
+      "templateDescription": "Descripción de la plantilla",
       "textInput": "Input de Texto",
       "textInputWithDescription": "Input de Texto (con descripcion)",
       "textArea": "Text Area",
@@ -259,6 +262,7 @@
       "country": "País Select",
       "countryMulti": "País Multi Select",
       "multi": "Multi Select",
+      "searchable": "Buscar",
       "simple": "Select Simple",
       "title": "Selects"
     }
@@ -540,7 +544,9 @@
       "showMore": "Mostrar mas",
       "addMore": "Agregar mas",
       "readMore": "Show More",
-      "delete": "Borrar"
+      "delete": "Borrar",
+      "addWidget": "Agregar Widget",
+      "saveTemplate": "Guardar Plantilla"
     },
     "link": {
       "edit": "Edit",
