@@ -1,4 +1,19 @@
 {
+  "gb":{
+    "button": "Boton",
+    "graphics": "Graficas",
+    "varname": "Nombre de la Variable",
+    "decimalplaces": "Decimales",
+    "icon": "Icono",
+    "backtime": "Minutos",
+    "theme": "Tema",
+    "indicator": "Indicador",
+    "togglebutton": "Toggle Buton",
+    "smallswitch": "Interruptor Pequeño",
+    "switch": "Interruptor",
+    "sizes": "Tamaños",
+    "unit": "Unidad"
+  },
   "auth": {
     "agree": "Acepto",
     "createAccount": "Create cuenta",

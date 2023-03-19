@@ -1,4 +1,7 @@
 {
+  "gb":{
+    "graphics": "Graficas"
+  },
   "auth": {
     "agree": "Acepto",
     "createAccount": "Create cuenta",

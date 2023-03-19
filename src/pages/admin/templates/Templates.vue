@@ -30,19 +30,19 @@
                         <!--<div  v-if="simpleOptions[0].value == 'numberchart'">-->
                         <form v-if=" widgetType == 'Number Chart Input'">
                           <br /> 
-                          Graficas <!--poner una clase a los div los inputs para que se separen -->
+                          {{ t('gb.graphics') }} <!--poner una clase a los div los inputs para que se separen -->
                           <br /> <br />                           
-                          <va-input label="Var Name" type="text" ></va-input>
+                          <va-input v-model="ncConfig.variableFullName" :label="t('gb.varname')" type="text" ></va-input>
                           <br /> <br />                          
-                          <va-input  label="Unit" type="text"></va-input>
+                          <va-input v-model="ncConfig.unit" :label="t('gb.unit')" type="text"></va-input>
                           <br /> <br />                          
-                          <va-input  label="Decimal Places" type="number"></va-input>
+                          <va-input v-model="ncConfig.decimalPlaces" :label="t('gb.decimalplaces')" :min="0" :max="3" type="number"></va-input>
                           <br /> <br /> 
-                          <va-input v-model="icon" label="Icon" type="text"/>
+                          <va-input v-model="ncConfig.icon" :label="t('gb.icon')" type="text"/>
                           <br /> <br /> 
-                          <va-input  label="chart Back Time (mins)" type="number"></va-input>
+                          <va-input v-model="ncConfig.chartTimeAgo" :label="t('gb.backtime')" type="number"></va-input>
                             <br /> <br /> 
-                          <va-select v-model="tema" label="Tema" type="text" 
+                          <va-select v-model="ncConfig.class" :label="t('gb.theme')" type="text" 
                           :options="['success','danger','warning','info','secondary',
           '#36e9f6', '#ed34b8 (violeta)','#8f4ed6 (purpura)', '#d40d52 (ruby)','#ff842b (naranja)',
           '#1b9a7c (dark green)','#d3ff00 (toxic)','#81513e (brow)']"/>
@@ -54,19 +54,32 @@
                           </div>
                         <!--Forms button type-->
                         <div v-else-if="widgetType == 'Button Output'">
-                            button
+                            {{ t('gb.button') }}
                           </div>
                         <!--Forms indicator type-->
                           <div v-else-if="widgetType == 'Indicator Input'">
-                            indicator
+                            {{ t('gb.indicator') }}
                           </div>
                         <!--Forms switch small type-->
                           <div v-else-if="widgetType == 'Small Switch Output'">
-                            smallswitch
+                            {{ t('gb.smallswitch') }}
                           </div>
                         <!--Forms switch type-->
                         <div v-else-if="widgetType == 'Switch Output'">
-                            switch
+                            {{ t('gb.switch') }}
+                            <br /> <br />                           
+                            <va-input :label="t('gb.varname')" type="text" ></va-input>
+                            <br /> <br /> 
+                            <va-input v-model="iotSwitchConfig.icon" :label="t('gb.icon')" type="text"/>
+                            <br /> <br /> 
+                            <va-select v-model="iotSwitchConfig.class" :label="t('gb.theme')" type="text" 
+                            :options="['success', 'danger', 'warning', 'info', 'secondary',
+                              '#36e9f6', '#ed34b8 (violeta)', '#8f4ed6 (purpura)', '#d40d52 (ruby)', '#ff842b (naranja)',
+                              '#1b9a7c (dark green)', '#d3ff00 (toxic)', '#81513e (brow)']"/>
+                              <br /> <br /> 
+                            <va-select v-model="iotSwitchConfig.column" :label="t('gb.sizes')" type="text" 
+                              :options="['xs12', 'xs8', 'xs6', 'xs4', 'xs2', 'xs1']"/>
+                                <br /> <br />
                           </div>
                     </div>
 
@@ -204,10 +217,10 @@ export default {
         templateName: "",
         templateDescription:"",
         ncConfig: {
-        userId: 'sampleuserid',
-        selectedDevice: {
-            name: "home",
-            dId: "8888",
+          userId: 'sampleuserid',
+          selectedDevice: {
+              name: "home",
+              dId: "8888",
         },
         variableFullName: "temperature",
         variable: 'varname',
@@ -222,21 +235,20 @@ export default {
         chartTimeAgo: '1566',
         demo: true
       },
-        configindicator: {
-            userId: "userid",
-            selectedDevice: {
-                name: "home",
-                dId: "8888",
-                templateName: "Power Sensor",
-                templateId: "28934750238957",
-                saverRule: true,
-            },
-            variableFullName: "bomba",
-            variable: "var1",
-            icon: "fa-lightbulb",
-            column: "xs6 md2",
-            widget: "indicator",
-            class: "warning"
+        iotIndicatorConfig: {
+          userId: "userid",
+          selectedDevice: {
+            name: "home",
+            dId: "8888",
+          },
+          variableFullName: "temperature",
+          variable: "varname",
+          class: "warning",
+          widget: "indicator",
+          icon: "fa-lightbulb",
+          column: "xs6 md2",
+          
+            
         },
         configtoggle: {
             userId: 'userid',
@@ -255,23 +267,34 @@ export default {
             class: 'warning'
       },
         iotSwitchConfig: {
+          userId: 'userid',
+            selectedDevice: {
+              name: "home",
+              dId: "8888",
+          },
+          variableFullName: "bomba",
+          variable: 'varname',
+            class: 'warning',
+            widget: 'indicator',
+            icon: "fa-lightbulb",
+            column: 'xs8 md3' //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2  
+      },
+      iotButtonConfig: {
         userId: 'userid',
         selectedDevice: {
           name: "home",
           dId: "8888",
-          templateName: "Power Sensor",
-          templateId: "28934750238957",
-          saverRule: true,
         },
         variableFullName: "bomba",
-        variable: 'var1',
+        text: "send",
+        message:"testing123",
+        variable: 'varname',
+        class: 'warning',
+        widget: 'button',
         icon: "fa-lightbulb",
-        column: 'xs8 md3', //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2
-        widget: 'indicator',
-        class: 'warning'
+        column: 'xs8 md3' //xs8 md3, xs4 md9, xs3 md4, xs6 md4, xs6 md2  
       },
-      
-        };
+      };
     },
   methods: {
     },
