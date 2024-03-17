@@ -39,6 +39,7 @@ After checking the prerequisites, follow these simple steps to install and use
 Vuestic Admin:
 
 ```
+* LALO parece ser que esta es la pagina que se estaba haciendo en la raspberry pi
 # clone the repo
 $ git clone https://github.com/epicmaxco/vuestic-admin.git myproject
 
